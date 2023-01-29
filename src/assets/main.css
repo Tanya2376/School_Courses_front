@@ -1,0 +1,125 @@
+@import 'reset.css';
+@import '../components/Header/header.css';
+@import '../components/Footer/footer.css';
+@import 'grid.css';
+
+@media (max-width: 524px) {
+    h1 {
+        font-size: 50px;
+    }
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf');
+}
+::-webkit-scrollbar {
+    width: 0;
+  }
+body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: 'Roboto';
+    height: 100vh;
+}
+
+body.lock {
+    overflow-y: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.border_item {
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgb(0, 255, 255, 0.5);
+}
+
+.form_input {
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    max-width: 200px;
+}
+
+.form_button {
+    padding: 10px;
+    border: 1px solid #333;
+    max-width: 200px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.form_button:hover {
+    border: 1px solid cyan;
+    background-color: cyan;
+    color: white;
+}
+
+.form_title {
+    color: #333;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.form_input:hover, .form_input:focus {
+    border: 1px solid cyan;
+}
+
+.section-mb56 {
+    margin-bottom: 56px;
+}
+
+.h2 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.h3 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.pb-32 {
+    padding-bottom: 32px;
+}
+
+.pb-16 {
+    padding-bottom: 16px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.pb-24 {
+    padding-bottom: 24px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.pt-15 {
+    padding-top: 15px;
+}
+
+.pt-56 {
+    padding-top: 56px;
+}
+
+.pb-56 {
+    padding-bottom: 56px;
+}
+
+.pb-4 {
+    padding-bottom: 4px;
+}
+
+.pb-8 {
+    padding-bottom: 8px;
+}

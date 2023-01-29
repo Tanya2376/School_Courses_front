@@ -1,0 +1,15 @@
+.review_img {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 375px;
+}
+
+.review_text {
+    padding: 15px;
+}
+
+.arrow_slider {
+    display: flex;
+    font-size: 50px;
+    cursor: pointer;
+}

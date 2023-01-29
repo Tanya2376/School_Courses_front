@@ -1,0 +1,27 @@
+.teachers_prepods {
+    overflow-x: auto;
+}
+
+.teachers_prepods_body {
+    width: 1200px;
+    display: flex;
+}
+
+.teachers-item {
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+}
+.teachers-item-img {
+    border-radius:  15px 15px 15px 15px;
+}
+
+.teachers-item-name {
+    padding: 15px 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.teachers-item-name>h3 {
+    font-size: 20px;
+}

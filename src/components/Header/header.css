@@ -1,0 +1,58 @@
+header {
+    box-shadow: 0px 1px 15px grey;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+}
+
+.header_body {
+    padding: 25px 0;
+    transition: 0.3s;
+}
+
+.header_body_container {
+    max-width: 1400px;
+}
+
+.header_sing_up {
+    text-align: end;
+    cursor: pointer;
+}
+
+
+.anchor_heading {
+    padding-top: 56px;
+    margin-top: -56px;
+}
+
+.header_body.scroll {
+    padding: 10px 0;
+}
+
+.header_logo {
+    background: url('resources/images/logo.png') no-repeat;
+    width: 60px;
+    background-size: cover;
+    height: 60px;
+    transition: 0.3s;
+}
+.header_logo.scroll {
+    width: 40px;
+    height: 40px;
+}
+
+.header_menu-item {
+}
+
+.header_menu-item-link {
+    font-size: 18px;
+    color: #333;
+    transition: 0.3s;
+}
+.header_menu-item-link.scroll {
+    font-size: 16px;
+}
+.header_menu-item-link:hover {
+    color: cyan;
+}
