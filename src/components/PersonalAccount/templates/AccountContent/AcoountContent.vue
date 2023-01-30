@@ -42,7 +42,7 @@
     <!-- пропс можно не обязательно id называть, ведь я пехнул из Homework весь item а не только id -->
     <HomeworkItem
         v-if="opened_AcccountItem==='homework_item'"
-        
+        :title = title
         :type = type
     />
     <HomeworkItem1

@@ -1,16 +1,17 @@
 <template>
-   <div v-for="item in  homeworkObj" v-bind:key="item"  class="flex-col flex-col--12">
-      <div class="homework_item">
-         Домашнее задание по предмету: "{{item.title_object}}"
-      </div>
-   </div>
+   
    <div v-for="item in  homeworkZadanie" v-bind:key="item"  class="flex-col flex-col--12">
    <div class="homework_item">
-    {{item.title}}
+      <p class="articles_title pb-16">
+         Домашнее задание по предмету: "{{item.title_object}}"</p>
+      </div>
+      <div class="homework_item">
+         <p class="articles_title pb-16">  
+    С темой: "{{item.title}}"</p>
    </div> 
    <br>
    <div class="flex-col flex-col--12">
-      <div class="test_task" >
+      <div class="test_task_img">
          <img :src="require(`@/components/PersonalAccount/resources/image/task/${item.task}`)" alt="">
       </div>
    </div>
@@ -24,12 +25,13 @@
       </div>
    <br>
    <br>
-   <div v-for="item in  PupilAnswer" v-bind:key="item"  class="flex-col flex-col--12">
+   
       <div class="homework_item">
-         Оценка: {{item.valuation}}
+         <p class="articles_title pb-16">  
+         Оценка: {{item.valuation}}</p>
       </div> 
       <br>
-   </div>
+   
 </div>
 </template>
 
@@ -56,33 +58,19 @@ export default {
             login: localStorage.login,
             type_task: this.type,
             
-         },
-         paramsObj: {
-            login: localStorage.login,
-            type_task: this.type
-           
          }
+         
       }
    },
    methods: {
-      object() {
-         homework.getObjectHomework(this.paramsObj).then((res)=>{
-            this.homeworkObj = res.data
-            console.log(this.homeworkObj);
-         })
-      },
+      
       Zadanie() {
          homework.getHomework(this.params).then((res)=>{
             this.homeworkZadanie = res.data
             console.log(this.homeworkZadanie);
          })
       },
-      Ocenka(){
-         homework.getOcenkaThisPupil(this.params).then((res)=>{
-            this.PupilAnswer = res.data
-            console.log(this.PupilAnswer);
-         })
-      },
+     
       GoAnswer() {
          this.answer_params = {
             answer_pupil: this.answer_pupil,
@@ -95,9 +83,8 @@ export default {
       }
       },
       mounted() {
-         this.object(),
-         this.Zadanie(),
-         this.Ocenka();
+         
+         this.Zadanie();
      
       }
    }
@@ -114,6 +101,12 @@ export default {
    cursor: pointer;
 }
 
+.test_task_img {
+  width: 348px;
+  height: 248px;
+  overflow: hidden;
+  display: flex;
+}
 .test_answer {
    display: flex;
    flex-direction: column;
