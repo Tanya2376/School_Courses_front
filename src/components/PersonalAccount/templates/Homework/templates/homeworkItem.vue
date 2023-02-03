@@ -1,6 +1,6 @@
 <template>
    
-   <div v-for="item in  homeworkZadanie" v-bind:key="item"  class="flex-col flex-col--12">
+   
    <div class="homework_item">
       <p class="articles_title pb-16">
          Домашнее задание по предмету: "{{item.title_object}}"</p>
@@ -32,7 +32,7 @@
       </div> 
       <br>
    
-</div>
+
 </template>
 
 <script>
@@ -41,7 +41,14 @@ import homework from '@/service/Homework/homework.js';
 export default {
    name: "homework-item",
    props: {
-    
+      item: {
+         type: Object,
+         required: true
+      },
+      id: {
+         type: String,
+         required: true
+      },
       type: {
          type: String,
          required: true
@@ -57,8 +64,9 @@ export default {
          params: {
             login: localStorage.login,
             type_task: this.type,
-            
+            id_homework:this.id
          }
+         
          
       }
    },
@@ -66,7 +74,7 @@ export default {
       
       Zadanie() {
          homework.getHomework(this.params).then((res)=>{
-            this.homeworkZadanie = res.data
+            this.homeworkZadanie=res.data;
             console.log(this.homeworkZadanie);
          })
       },

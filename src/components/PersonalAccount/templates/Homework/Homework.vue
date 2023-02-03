@@ -20,7 +20,7 @@
       </div>
    </div>
   
-   <div v-for="item in homeworkTeacher" v-bind:key="item" @click="openTeacher('homework_item1', item)" class="teacher">
+   <div v-for="item in homeworkTeacher" v-bind:key="item" @click="openTeacher('homework_item1', item.id)" class="teacher">
      Учитель с логином: {{ item.login }} нажми  на логин для продолжения работы
    </div>
    
@@ -35,7 +35,8 @@ export default {
       Type: {
          type: String,
          required: true
-      }
+      },
+      
    },
     data() {
       return{
@@ -74,7 +75,7 @@ export default {
          this.$emit('changeType', type)
       },
       getHomework() {
-         homework.getListHomework(this.params).then((res)=> {
+         homework.getHomework(this.params).then((res)=> {
          this.homeworkList = res.data
          console.log(this.homeworkList);
       })
