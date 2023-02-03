@@ -3,16 +3,16 @@
    
    <div class="homework_item">
       <p class="articles_title pb-16">
-         Домашнее задание по предмету: "{{item.title_object}}"</p>
+         Домашнее задание по предмету: "{{id.title_object}}"</p>
       </div>
       <div class="homework_item">
          <p class="articles_title pb-16">  
-    С темой: "{{item.title}}"</p>
+    С темой: "{{id.title}}"</p>
    </div> 
    <br>
    <div class="flex-col flex-col--12">
       <div class="test_task_img">
-         <img :src="require(`@/components/PersonalAccount/resources/image/task/${item.task}`)" alt="">
+         <img :src="require(`@/components/PersonalAccount/resources/image/task/${id.task}`)" alt="">
       </div>
    </div>
       <div class="flex-col flex-col--12">
@@ -28,7 +28,7 @@
    
       <div class="homework_item">
          <p class="articles_title pb-16">  
-         Оценка: {{item.valuation}}</p>
+         Оценка: {{id.valuation}}</p>
       </div> 
       <br>
    
@@ -41,12 +41,9 @@ import homework from '@/service/Homework/homework.js';
 export default {
    name: "homework-item",
    props: {
-      item: {
-         type: Object,
-         required: true
-      },
+      
       id: {
-         type: String,
+         type: Array,
          required: true
       },
       type: {
@@ -64,7 +61,7 @@ export default {
          params: {
             login: localStorage.login,
             type_task: this.type,
-            id_homework:this.id
+            
          }
          
          

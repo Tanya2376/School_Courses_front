@@ -20,7 +20,7 @@
       </div>
    </div>
   
-   <div v-for="item in homeworkTeacher" v-bind:key="item" @click="openTeacher('homework_item1', item.id)" class="teacher">
+   <div v-for="item in homeworkTeacher" v-bind:key="item" @click="openTeacher('homework_item1', item)" class="teacher">
      Учитель с логином: {{ item.login }} нажми  на логин для продолжения работы
    </div>
    
