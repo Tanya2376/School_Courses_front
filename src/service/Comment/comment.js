@@ -10,6 +10,23 @@ class comment {
    async getComment(param) {
       return await axios.post(`${TEST_API_URL}ListOfComments.php`,JSON.stringify(param))
    }
+
+   // async NN(param) {
+   //    return await axios.post(`${TEST_API_URL}NN.php`,JSON.stringify(param))
+   // }
+
+   // async NN(params) {
+   //    return await axios.post(`${TEST_API_URL}NN.php`, params, {
+   //       headers: {
+   //          'Content-Type': 'multipart/form-data'
+   //       }
+   //    })
+   // }
+   // async NN(params) {
+   //    return await axios.post(`${TEST_API_URL}NN.php`, params, {
+         
+   //    })
+   // }
 }
 
 export default new comment()

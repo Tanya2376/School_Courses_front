@@ -68,6 +68,10 @@
       <div class="flex-col">
          <my-button @click="sendComment">Отправить</my-button>
       </div>
+      
+      <my-dialog v-model:show="show_dialog">
+         <div class="label">ваш комментарий - спам!</div>
+    </my-dialog>
    </div>
 </template>
 
@@ -95,7 +99,9 @@ export default {
       return {
          list: courseDesc,
          Comment:[],
+         com:'',
          sendedComment: '',
+         show_dialog: false,
          comment_params: {
             login: localStorage.login,
             id_object: this.id,
@@ -106,6 +112,9 @@ export default {
          commmentParam:{
             id_object: this.id,
             type_task: this.type
+         },
+         commentNN:{
+            message: ''
          },
          login: localStorage.login
       }
@@ -118,15 +127,27 @@ export default {
          this.sendedComment = event.target.value.trim()
       },
       sendComment() {
+
          this.comment_params.message = this.sendedComment
          this.comment_params.time = MyDate.generateDate()
          if(this.sendedComment) {
-            comment.setComment(this.comment_params).then(() => {
-               comment.getComment(this.commmentParam).then((res)=>{
+            comment.setComment(this.comment_params).then((res) => {
+               console.log(res.data);
+               console.log(typeof res.data);
+               if (res.data == false) {
+                  this.show_dialog = true
+               }
+               else{
+                  comment.getComment(this.commmentParam).then((res)=>{
                   this.Comment = res.data
                   this.sendedComment = ''
+                  // console.log(res.data); 
                })
+               }
+               
+              
             })
+            
          }
       }
    },
