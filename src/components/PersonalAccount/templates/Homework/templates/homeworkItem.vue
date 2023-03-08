@@ -21,6 +21,9 @@
                <input type="text"   v-model="answer_pupil" class=" mb-16 reg_input" />
             </p>
             <my-button @click="GoAnswer">Отправить свой ответ</my-button>
+            <my-dialog v-model:show="show_dialog">
+      <span class="red_msg">Ответ отправлен!</span>
+    </my-dialog>
          </div>
       </div>
    <br>
@@ -56,6 +59,7 @@ export default {
          homeworkObj: [ ],
          homeworkZadanie: [ ],
          PupilAnswer: [],
+         show_dialog:false,
          answer_pupil:'',
          answer_params:{},
          params: {
@@ -84,6 +88,7 @@ export default {
          }
          homework.insertAnswerPupils(this.answer_params).then((res)=> {
             console.log(res.data);
+            this.show_dialog=true
          })
       }
       },

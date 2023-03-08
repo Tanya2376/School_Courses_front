@@ -18,6 +18,7 @@
       <div @click="openAsideItem('courses_list')" class="account_list_items">Мои курсы</div>
       <div @click="openAsideItem('sucesses_list')" class="account_list_items">Успехи</div>
       <div @click="openAsideItem('homework_list')" class="account_list_items">Домашнее задание</div>
+      <div @click="openAsideItem('reiting_list')" class="account_list_items">Рейтинг</div>
    </div>
    <div @click="signOut" class="sign_out">Выйти</div>
  </div>

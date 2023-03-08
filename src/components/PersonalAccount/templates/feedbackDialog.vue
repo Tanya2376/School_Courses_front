@@ -23,6 +23,9 @@
       <div @mousemove="check(5)" @click="clickStar(5)" @mouseleave="close" class="star_body"><my-star :class="{'gold': stars[4]}" class="star"></my-star></div>
    </div>
    <my-button @click="setFeedback" >отправить</my-button>
+   <my-dialog v-model:show="show_dialog">
+         <div class="label">ваш комментарий - спам!</div>
+    </my-dialog>
 </div>
 
 </template>
@@ -62,8 +65,20 @@ export default {
       },
       setFeedback() {
          if((this.feedback.name!='') && (this.feedback.email!='') && (this.feedback.text_reviews!='') && (this.feedback.grade_reviews!='')){
-            Feedback.setFeedback(this.feedback).then(()=> {
-               this.SetFeedback = true
+            Feedback.setFeedback(this.feedback).then((res)=> {
+               console.log(res.data);
+               console.log(typeof res.data);
+               if (res.data == '') {
+                  this.show_dialog = true
+               }
+            else {
+               this.SetFeedback =true
+            }
+               
+               
+               
+              
+
             })
          }else{
             alert('Заполни поля или вали отсюда')
@@ -83,6 +98,7 @@ export default {
       return {
          stars: [false, false, false, false, false],
          checkClickStar: false,
+         show_dialog: false,
          feedback: {
             name: '',
             login: localStorage.login,

@@ -27,6 +27,10 @@
         @changeType="change_type"
         
     />
+    <ReitingUsers
+        v-if="showed_AccountItem==='reiting_list'"
+        
+    />
 
     <!-- Компоненты, показываемые внутри account content -->
     <Course
@@ -61,11 +65,11 @@ import SuccessItem from '@/components/PersonalAccount/templates/ObjectSuccess/Ob
 import Homework from '@/components/PersonalAccount/templates/Homework/Homework.vue'
 import HomeworkItem from '@/components/PersonalAccount/templates/Homework/templates/homeworkItem.vue'
 import HomeworkItem1 from '@/components/PersonalAccount/templates/Homework/templates/homeworkItem1.vue'
-
+import ReitingUsers from '@/components/PersonalAccount/templates/Reiting/ReitingUsers.vue'
 export default {
     name: "account-content",
     components: {
-        CoursesListVue,Course, News, Successes, SuccessItem, Homework, HomeworkItem,HomeworkItem1
+        CoursesListVue,Course, News, Successes, SuccessItem, Homework, HomeworkItem,HomeworkItem1,ReitingUsers 
     },
     props: {
         showedAccountitem: {
