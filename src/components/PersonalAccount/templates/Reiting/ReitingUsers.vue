@@ -1,8 +1,9 @@
 <template>
- <h2 class="pb-16">Рейтинг пользователей</h2>
+ 
  <div class="flex-container">
     
 <div class="comments_wrpper">
+   <h2 class="pb-16">Рейтинг пользователей</h2>
       <div class="flex-container flex-container-column">
          <div v-for="item in Reitings" v-bind:key="item" class="flex-col">
             <div class="message flex-container ">
