@@ -1,14 +1,16 @@
-import axios from 'axios'
+import { ApiServise } from '../api.service';
 
-const TEST_API_URL = 'http://localhost/TanyaGit/SchoolCourses_back/Object/'
+class Objects extends ApiServise {
+   constructor() {
+      super('Object');
+   }
 
-class Objects {
    async getOGE() {
-      return await axios.get(`${TEST_API_URL}/getObjectsOGE.php`)
+      return await this.api.get(`getObjectsOGE.php`)
    }
 
    async getUSE() {
-      return await axios.get(`${TEST_API_URL}/getObjectsUSE.php`)
+      return await this.api.get(`getObjectsUSE.php`)
    }
 }
 

@@ -1,32 +1,34 @@
-import axios from 'axios'
+import { ApiServise } from '../api.service';
 
-const TEST_API_URL = 'http://localhost/TanyaGit/SchoolCourses_back/Comment/'
+class Comment extends ApiServise {
+   constructor() {
+      super('Comment');
+   }
 
-class comment {
    async setComment(param) {
-      return await axios.post(`${TEST_API_URL}save_comment.php`, JSON.stringify(param))
+      return await this.api.post(`save_comment.php`, JSON.stringify(param))
    }
 
    async getComment(param) {
-      return await axios.post(`${TEST_API_URL}ListOfComments.php`,JSON.stringify(param))
+      return await this.api.post(`ListOfComments.php`, JSON.stringify(param))
    }
 
    // async NN(param) {
-   //    return await axios.post(`${TEST_API_URL}NN.php`,JSON.stringify(param))
+   //    return await this.api.post(`NN.php`,JSON.stringify(param))
    // }
 
    // async NN(params) {
-   //    return await axios.post(`${TEST_API_URL}NN.php`, params, {
+   //    return await this.api.post(`NN.php`, params, {
    //       headers: {
    //          'Content-Type': 'multipart/form-data'
    //       }
    //    })
    // }
+
    // async NN(params) {
-   //    return await axios.post(`${TEST_API_URL}NN.php`, params, {
-         
+   //    return await this.api.post(`NN.php`, params, {
    //    })
    // }
 }
 
-export default new comment()
+export default new Comment()

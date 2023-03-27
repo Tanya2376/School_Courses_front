@@ -1,14 +1,16 @@
-import axios from 'axios'
+import { ApiServise } from '../api.service';
 
-const TEST_API_URL = 'http://localhost/TanyaGit/SchoolCourses_back/RecommTest/'
+class Reccom extends ApiServise {
+   constructor() {
+      super('RecommTest');
+   }
 
-class Reccom {
    async insertRecc(params) {
-      return await axios.post(`${TEST_API_URL}insertRecomm.php`, JSON.stringify(params))
+      return await this.api.post(`insertRecomm.php`, JSON.stringify(params))
    }
 
    async getReccomTest(params) {
-      return await axios.post(`${TEST_API_URL}RecomTest.php`, JSON.stringify(params))
+      return await this.api.post(`RecomTest.php`, JSON.stringify(params))
    }
 }
 

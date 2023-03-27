@@ -1,13 +1,13 @@
-import axios from 'axios'
+import { ApiServise } from '../api.service';
 
-const TEST_API_URL = 'http://localhost/TanyaGit/SchoolCourses_back/Reiting/'
+class Reiting extends ApiServise {
+   constructor() {
+      super('Reiting');
+   }
 
-class Reiting {
-  
-
- async Reiting(params) {
-    return await axios.post(`${TEST_API_URL}Reiting.php`, JSON.stringify(params))
- }
+   async Reiting(params) {
+      return await this.api.post(`Reiting.php`, JSON.stringify(params))
+   }
 }
 
 export default new Reiting()

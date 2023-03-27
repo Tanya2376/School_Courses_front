@@ -1,15 +1,17 @@
-import axios from 'axios'
+import { ApiServise } from '../api.service';
 
-const TEST_API_URL = 'http://localhost/TanyaGit/SchoolCourses_back/Reviews/'
+class Feedback extends ApiServise {
+   constructor() {
+      super('Reviews');
+   }
 
-class Feedback {
    async setFeedback(param) {
-      return await axios.post(`${TEST_API_URL}insertReviews.php`, JSON.stringify(param))
+      return await this.api.post(`insertReviews.php`, JSON.stringify(param))
       
    }
 
    async getFeedbacks() {
-      return await axios.get(`${TEST_API_URL}get10Reviews.php`)
+      return await this.api.get(`get10Reviews.php`)
    }
 }
 
