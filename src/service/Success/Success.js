@@ -1,14 +1,16 @@
-import axios from 'axios'
+import { ApiServise } from '../api.service';
 
-const TEST_API_URL = 'http://localhost/TanyaGit/SchoolCourses_back/Uspevaemost_predm&theme/'
+class Success extends ApiServise {
+   constructor() {
+      super('Uspevaemost_predm&theme');
+   }
 
-class Success {
    async objectSuccess(params) {
-      return await axios.post(`${TEST_API_URL}/getUspevPredm.php`, JSON.stringify(params))
+      return await this.api.post(`getUspevPredm.php`, JSON.stringify(params))
    }
 
    async themeSuccess(params) {
-      return await axios.post(`${TEST_API_URL}/getUspevTema.php`, JSON.stringify(params))
+      return await this.api.post(`getUspevTema.php`, JSON.stringify(params))
    }
 }
 

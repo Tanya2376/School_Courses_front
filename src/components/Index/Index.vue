@@ -94,7 +94,7 @@
       </div>
     </section>
     <div id="reviews" class="anchor_heading"></div>
-    <section class="section-mb56 section_reviews">
+    <section class="section-mb56 section_reviews" v-if="students.length>0">
       <div class="container">
         <div class="reviews">
             <h2 class="h2 pb-32">ОТЗЫВЫ</h2>
