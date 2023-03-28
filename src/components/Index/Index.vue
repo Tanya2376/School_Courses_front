@@ -101,7 +101,7 @@
             <div class="flex-container">
                 <div class="flex-col flex-col--3 flex-col--xm3">
                   <div class="review_img image">
-                    <img :src="require(`@/components/PersonalAccount/resources/image/users/${students[counter].photo}`)" alt="">
+                    <img :src="require(`@/components/PersonalAccount/resources/image/users/${students[counter]?.photo}`)" alt="">
                   </div>
                 </div>
                 <div class="flex-col flex-col--8 flex-col--xm9">
