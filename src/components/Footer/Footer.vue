@@ -28,7 +28,7 @@
               <h4 class="footer_item_title">Контакты</h4>
               <ul class="footer_item_list flex-container flex-container-column">
                 <li class="footer_item_list_link">Связаться с нами можно по почте:</li>
-                <li class="footer_item_list_link">asdrewq.99@mail.ru</li>
+                <li class="footer_item_list_link">school-courses@yandex.ru</li>
                 <li class="footer_item_list_link">Или по телефону:</li>
                 <li class="footer_item_list_link">+79969262734</li>
               </ul>
