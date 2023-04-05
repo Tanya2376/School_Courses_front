@@ -22,7 +22,16 @@
          <my-button v-else @click="goAnswer">
             Завершить тест
          </my-button>
+         <br>
+         <div class="flex-container">
+            <div class="licence">
+            <p>Источники заданий:</p> 
+            <p> Образовательный портал «РЕШУ ЕГЭ» и «РЕШУ ОГЭ»: [сайт]. URL: https://ege.sdamgia.ru</p>
+            <p> Образовательный портал «Незнайка»: [сайт]. URL: https://neznaika.info/</p> 
+            <p> Открытый банк заданий «ФИПИ»: [сайт]. URL: https://fipi.ru/</p> 
       </div>
+   </div>
+   </div>
       <div v-else class="loading">
          Создаем тест...
       </div>
@@ -140,14 +149,19 @@ export default {
 .test_title_body {
  
 }
-
+br{
+        padding: 10px;
+        }
 .person {
    width: 48px;
    border-radius: 50%;
    background-color: grey;
    cursor: pointer;
 }
-
+.licence{
+   padding-top: 32px;
+   font-size: 16px;  
+}
 .test_items {
    padding: 32px 24px
 }

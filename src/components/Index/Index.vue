@@ -12,18 +12,8 @@
         <h2 class="h2 pb-32">УЧЁБА ДЛЯ ПОДГОТОВКИ К ОГЭ<br>И ЕГЭ</h2>
         <div class="flex-container study_items">
           <div class="flex-col flex-col--12">
-            <div class="study_item study-item-subject-preschool">
-              <h3 class="h3 pb-16">ТЕСТИРОВАНИЕ</h3>
-              <div class="study-item-subject flex-container">
-                <div class="study-item-subject-item flex-col">
-                  <a href="">Все предметы ОГЭ</a>
-                </div>
-                <div class="study-item-subject-item flex-col">
-                  <a href="">Все предметы ЕГЭ</a>
-                </div>
-             
-              </div>
-            </div>
+           
+           
           </div>
          
           <div class="flex-col flex-col--12">
